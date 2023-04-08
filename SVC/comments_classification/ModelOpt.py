@@ -58,5 +58,5 @@ class ModelOpt:  # 模型选择
 
 if __name__ == '__main__':  # 这个多种训练模型对比的算法要跑比较久，差不多半小时
     patch_sklearn()  # sklearn相关机器学习算法的运行计算加速
-    M = ModelOpt('comments/toutiao_cat_data.txt')
+    M = ModelOpt('../comments/toutiao_cat_data.txt')
     M.main()

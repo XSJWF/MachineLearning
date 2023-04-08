@@ -86,7 +86,8 @@ class ModelTrainingToClassification:  # 模型训练
         """
         :return: 返回整个数据集特征向量化后的结果，对每行预处理之后的文本选出特征并做向量化
         """
-        tfidf = TfidfVectorizer(norm='l2', ngram_range=(1, 2))  # 为保证特征的丰富性和训练的效果，除了分词之后的每个单独的字词用作特征外，还将相邻的两个词组用作特征
+        # 为保证特征的丰富性和训练的效果，除了分词之后的每个单独的字词用作特征外，还将相邻的两个词组用作特征
+        tfidf = TfidfVectorizer(norm='l2', ngram_range=(1, 2))
         return tfidf.fit_transform(self.sentence), self.categoryID
 
     def model_training(self):
